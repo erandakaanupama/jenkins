@@ -15,7 +15,7 @@ services:
     container_name: remote_host
     image: remote_host
     build:
-      context: ubuntu
+      context: centos7
     networks:
       - net
   db_host:
