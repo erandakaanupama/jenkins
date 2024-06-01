@@ -2,13 +2,14 @@ version: '5'
 services:
   jenkins:
     container_name: jenkins
-    image: jenkins-ansible
+    image: jenkins/docker
     build:
-      context: jenkins-ansible
+      context: pipeline
     ports:
       - "8080:8080"
     volumes:
       - "$PWD/jenkins_home:/var/jenkins_home"
+      - "/var/run/docker.sock:/var/run/docker.sock"
     networks:
       - net
   remote_host:
